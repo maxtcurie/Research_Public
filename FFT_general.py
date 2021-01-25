@@ -24,8 +24,11 @@ def FFT_function_time_uniform(function,time,timestep,plot):
     #print(str(time.shape[-1]))
     #output_x = np.fft.fftfreq(t.shape[-1])
     frequency = np.fft.fftfreq(time.shape[-1], d=timestep)
-    amplitude_frequency=norm*amplitude_complex.real
-    amplitude_growth=norm*amplitude_complex.imag
+    amplitude_frequency=abs(norm*amplitude_complex)
+    #amplitude_frequency=norm*amplitude_complex.real
+    phase_frequency=np.angle(amplitude_complex)
+
+    #https://stackoverflow.com/questions/43019136/how-to-get-phase-fft-of-a-signal-can-i-get-phase-in-time-domain
 
     if plot==True: 
         plt.clf()
@@ -41,12 +44,11 @@ def FFT_function_time_uniform(function,time,timestep,plot):
         #plt.axvline(frequency,color='red', label="correct frequency")
         #plt.axvline(2.*frequency,color='red', label="correct frequency")
         plt.plot(frequency,amplitude_frequency,label="frequency")
-        plt.plot(frequency,amplitude_growth,label="growth")
         plt.legend()
         plt.title('Function of frequency',fontsize=20)
         plt.show()
 
-    return frequency,amplitude_frequency,amplitude_growth
+    return frequency,amplitude_frequency,phase_frequency
 
 
 def FFT_function_time_not_uniform(function,time,plot):
@@ -61,8 +63,8 @@ def FFT_function_time_not_uniform(function,time,plot):
     dt=uni_time[:-1]-uni_time[1:]
     timestep=dt[0]
     
-    frequency,amplitude_frequency,amplitude_growth=FFT_function_time_uniform(uni_function,uni_time,timestep,plot)
-    return frequency,amplitude_frequency,amplitude_growth
+    frequency,amplitude_frequency,phase_frequency=FFT_function_time_uniform(uni_function,uni_time,timestep,plot)
+    return frequency,amplitude_frequency,phase_frequency
 
 
 def FFT_function_time(function,time,plot=False): 
@@ -83,15 +85,16 @@ def FFT_function_time(function,time,plot=False):
         timestep=dt[0]
         print('time step is uniform, dt=: '+str(timestep))
         print('Runing uniform FFT')
-        frequency,amplitude_frequency,amplitude_growth=FFT_function_time_uniform(function,time,timestep,plot)
+        frequency,amplitude_frequency,phase_frequency=FFT_function_time_uniform(function,time,timestep,plot)
     else:
         print('time step is NOT uniform. Runing non-uniform FFT')
-        frequency,amplitude_frequency,amplitude_growth=FFT_function_time_not_uniform(function,time,plot)
+        frequency,amplitude_frequency,phase_frequency=FFT_function_time_not_uniform(function,time,plot)
 
     frequency_sort,amplitude_frequency_sort=sort_x_f(frequency,amplitude_frequency)
-    frequency_sort,amplitude_growth_sort=sort_x_f(frequency,amplitude_growth)
+    frequency_sort,phase_frequency_sort=sort_x_f(frequency,phase_frequency)
 
-    return frequency_sort,amplitude_frequency_sort,amplitude_growth_sort
+    return frequency_sort,amplitude_frequency_sort,phase_frequency_sort
+
 
 '''
 #*********Demo function****************
@@ -108,12 +111,14 @@ print(str(time))
 
 frequency=20.
 omega = 2.*np.pi*frequency
-function=np.exp(1.j * omega * time)+0.5*np.exp(1.j * 2*omega * time)
+function=1+np.exp(-1.j * omega * time -3.j)+0.5*np.exp(+1.j * 2*omega * time-1.j)
 #*********Demo function****************
 
+#frequency,amplitude_frequency,amplitude_growth = FFT_function_time(abs(function)**2.,time,plot=True)
 frequency,amplitude_frequency,amplitude_growth = FFT_function_time(function,time,plot=True)
+#frequency,amplitude_frequency,amplitude_growth = window_FFT_function_time(function,time,plot=True)
+
+
+
 
 '''
-
-
-
