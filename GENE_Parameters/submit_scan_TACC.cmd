@@ -1,5 +1,6 @@
 #!/bin/bash
 #SBATCH -J GENE        # Job Name
+#SBATCH -A GKIMP		# project name
 #SBATCH -o GENE.out%j    # Output and error file name (%j expands to jobID)
 #SBATCH -N 15
 #SBATCH -n 960           # Total number of mpi tasks requested, n=N*64
