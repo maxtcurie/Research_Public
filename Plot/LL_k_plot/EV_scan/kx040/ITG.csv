@@ -1,0 +1,5 @@
+﻿Suffix,index,kymin,omega(kHz),omega_plasma(kHz),gamma(cs/a),mode,Qem_e/Qes_e,D_e/chi_e,chi_i/chi_e,Q_i/Q_e,D_e/chi_tot,
+1,0,0.05,-4.894350066,3.582907,0.017665,ITG/TEM,-0.10385,0.355375,4.564227,7.847984,0.014499,/global/cscratch1/sd/maxcurie/LL_EV/scanfiles0033
+1,1,0.1,2.984415997,,0.033004076,ITG/TEM,-0.099896029,-0.035325838,6.771092689,11.64259128,-0.001135186,/global/cscratch1/sd/maxcurie/LL_EV_kx_scan/scanfiles0020
+4,1,0.16,3776.319765,,-1.54618573,ITG/TEM,-0.002803826,7.286435323,28.49920452,49.00310854,0.246350509,/global/cscratch1/sd/maxcurie/LL_EV_kx_scan/scanfiles0020
+5,1,0.18,-5307.470181,,-2.54658207,ITG/TEM,0.000399013,-6.261222362,-27.39933036,-47.11192407,0.23658971,/global/cscratch1/sd/maxcurie/LL_EV_kx_scan/scanfiles0020

@@ -1,0 +1,13 @@
+﻿Suffix,index,kymin,omega(kHz),omega_plasma(kHz),gamma(cs/a),mode,Qem_e/Qes_e,D_e/chi_e,chi_i/chi_e,Q_i/Q_e,D_e/chi_tot,
+12,0,0.8,-276.4301131,-140.794,5.458367,ETG,-0.00025,-0.00159,0.006427,0.01105,-0.00157,/global/cscratch1/sd/maxcurie/LL_EV_kx_scan/scanfiles0004
+13,1,1,-514.6311413,-345.086,4.126911,ETG,-4.89E-06,0.000243,0.002068,0.003556,0.000242,/global/cscratch1/sd/maxcurie/LL_EV_kx_scan/scanfiles0004
+11,0,0.6,-225.9160848,-124.189,3.950642,ETG,-0.00049,-0.0026,0.008432,0.014498,-0.00256,/global/cscratch1/sd/maxcurie/LL_EV_kx_scan/scanfiles0004
+12,1,0.8,-423.9251131,-288.289,3.691384,ETG,-5.42E-05,-3.67E-05,0.002715,0.004668,-3.65E-05,/global/cscratch1/sd/maxcurie/LL_EV_kx_scan/scanfiles0004
+8,0,0.3,-139.0039424,-88.1404,1.656325,ETG,-0.00141,-0.00302,0.011222,0.019295,-0.00295,/global/cscratch1/sd/maxcurie/LL_EV_kx_scan/scanfiles0004
+8,1,0.3,-197.3275424,-146.464,0.935816,ETG,-0.00063,-0.00024,0.004472,0.007689,-0.00023,/global/cscratch1/sd/maxcurie/LL_EV_kx_scan/scanfiles0004
+7,0,0.2,-100.4002283,-66.4912,0.772865,ETG,-0.00089,-0.00211,0.013619,0.023417,-0.00204,/global/cscratch1/sd/maxcurie/LL_EV_kx_scan/scanfiles0004
+6,0,0.18,-92.48272544,-61.9646,0.610891,ETG,-0.00083,-0.00178,0.01417,0.024365,-0.00171,/global/cscratch1/sd/maxcurie/LL_EV_kx_scan/scanfiles0004
+8,0,0.18,-92.48272544,-61.9646,0.610891,ETG,-0.00083,-0.00178,0.01417,0.024365,-0.00171,/global/cscratch1/sd/maxcurie/LL_EV_kx_scan/scanfiles0018
+5,0,0.18,-61.9645879,,0.610891236,ETG,-0.000834985,-0.001783046,0.014170465,0.024365481,-0.001712824,/global/cscratch1/sd/maxcurie/LL_EV_kx_scan/scanfiles0022
+1,0,0.18,-61.9645879,,0.610891236,ETG,-0.000834985,-0.001783046,0.014170465,0.024365481,-0.001712824,/global/cscratch1/sd/maxcurie/LL_EV_kx_scan/scanfiles0028
+2,0,0.17,-59.72970117,,0.52765263,ETG,0.000155814,-0.001686694,0.01416709,0.024359679,-0.001617497,/global/cscratch1/sd/maxcurie/LL_EV_kx_scan/scanfiles0030
