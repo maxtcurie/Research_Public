@@ -40,6 +40,7 @@ def spectral_density(function,time,window_for_FFT='boxcar',plot=False):
 	#f, Pxx_den = signal.welch(uni_function, fs, nperseg=len(uni_function), window=window_for_FFT) #, scaling='spectrum')
 
 	f, Pxx_den = signal.welch(uni_function, fs, nperseg=len(uni_function), window=window_for_FFT) #, scaling='spectrum')
+	#f, Pxx_den = signal.periodogram(uni_function, fs)
 
 	#Sort frequency to monotonic increase
 	f, Pxx_den=sort_x_f(f, Pxx_den)
