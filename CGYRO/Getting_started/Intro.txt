@@ -1,0 +1,32 @@
+Hi Max.  For this project, as we talked about this morning, I think that the first things to do are to get gacode working on IRIS and to run some simple linear cgyro cases.  Then we can start running some experimental NSTX cases and thinking about the model.
+
+For set-up on IRIS, you will need to add the following to your .bashrc:
+
+module load defaults
+module load atom/dev
+export GACODE_PLATFORM=SATURN_GCC
+export GACODE_ROOT=/fusion/projects/codes/atom/dev/atom_SATURN_GCC/gacode
+. ${GACODE_ROOT}/shared/bin/gacode_setup
+
+Then you can run the cgyro regression set:
+>> cgyro -r -n 2
+
+This will create a directory of simple cgyro tests “cgyro_regression_test” and run then and all should print “PASS”
+
+
+
+
+
+General Atomics Fusion Theory <noreply@github.com>
+Thu, Aug 11, 9:28 AM (1 day ago)
+to me
+
+You’ve been added to the "GACODE users" team for the organization:
+
+"General Atomics Fusion Theory"
+
+"GACODE users" has 220 members and gives access to 1 "gafusion" repository.
+
+View "GACODE users": https://github.com/orgs/gafusion/teams/gacode-users
+
+Read more about team permissions here: https://docs.github.com/articles/what-are-the-different-access-permissions
