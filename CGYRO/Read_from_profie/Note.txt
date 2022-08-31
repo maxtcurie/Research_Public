@@ -1,0 +1,11 @@
+Hi Max.  To run CGYRO with a p-file and g-file, you need to use the profiles_gen tool of gacode:
+>> profiles_gen -i name_of_pfile -g name_of_gfile
+
+This will create an input.gacode file.  While CGYRO can be run with the input.gacode, if you are going to do some parameterized studies that vary the experimental parameters, it is best to extract them into an input.cgyro file so you can directly change the values.  To do this:
+>> profiles_gen -i input.gacode -loc_rad 0.5
+
+The number after the “-loc_rad” is the value of r/a for which you want to extract the local parameters.  This will create input files for CGYRO, TGLF, and NEO.  You can then run the input.cgyro.  The resolutions are set as just as standard template, so you will need to adjust these according to your case.  The command populates the input.cgyro with all species in the input.gacode.  This is usually not what you want.  To limit the number of ions to include (e.g. I would recommend starting with just main ions and deuterium — electrons will be included automatically), instead run:
+
+>> profiles_gen -i input.gacode -loc_rad 0.5 -nion 2 -qn
+
+This will also readjust the main ion density and density gradient for quasi-neutrality, which I’d also recommend.
