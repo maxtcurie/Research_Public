@@ -1,3 +1,7 @@
+'profiles_gen -i '+pfile+' -g '+gfile 
+'profiles_gen -i input.gacode -loc_rad '+str(r_location)+' -nion '+str(nion)+' -qn'
+	
+
 get interactiave node:
 salloc --nodes 1 --qos interactive --time 01:00:00 --constraint knl
 debug queue
