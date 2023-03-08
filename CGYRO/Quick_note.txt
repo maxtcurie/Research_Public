@@ -1,8 +1,57 @@
-'profiles_gen -i '+pfile+' -g '+gfile 
-'profiles_gen -i input.gacode -loc_rad '+str(r_location)+' -nion '+str(nion)+' -qn'
-	
+Note from the GA Code: https://gafusion.github.io/doc/cgyro.html
 
+
+1. Add th following lines to .bashrc, refers to: https://gafusion.github.io/doc/setup.html
+
+
+and for PPPL
+
+#********Start of CGYRO**********
+export GACODE_PLATFORM=PPPL
+export GACODE_ROOT=cgyro_dir # !!!!!! upto date cgyro.
+ . ${GACODE_ROOT}/shared/bin/gacode_setup
+
+#The default stack limit of 8M is only sufficient
+#for up to about 4 omp threads.
+ulimit -s 32768
+
+### CGYRO enviroment
+module purge
+#module load python
+module load git
+module load intel/2022.1.2
+module load netcdf-c/4.9.0
+module load netcdf-fortran/4.6.0
+module load netcdf-cxx4/4.3.1
+module load openmpi/4.1.2
+module load fftw/3.3.10
+module load hdf5-parallel/1.12.1
+module load gcc/9.3.0
+module load szip/2.1.1
+module load lapack
+
+#********End of CGYRO************
+
+
+2. generate GACODE profile from EFIT 
+
+generate gacode profile
+'profiles_gen -i '+pfile+' -g '+gfile 
+
+calculate the local profile with r/a
+'profiles_gen -i input.gacode -loc_rad '+str(r_location)+' -nion '+str(nion)+' -qn'
+
+calculate the local profile with rho
+'profiles_gen -i input.gacode -loc_rho '+str(r_location)+' -nion '+str(nion)+' -qn'
+
+
+3. Submit the job
 get interactiave node:
 salloc --nodes 1 --qos interactive --time 01:00:00 --constraint knl
 debug queue
 salloc --nodes 1 --qos interactive --time 00:30:00 -q debug --constraint knl
+
+
+namelist for the parameters: https://gafusion.github.io/doc/cgyro/cgyro_list.html
+
+
